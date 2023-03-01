@@ -28,8 +28,13 @@ body {
   color: var(--maroon) !important;
 }
 
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.hover-effect {
+  transition: transform .5s;
 }
+
+.hover-effect:hover {
+  /* opacity: 0.5; */
+  transform: scale(1.2);
+  transition: transform .5s;
+}
+

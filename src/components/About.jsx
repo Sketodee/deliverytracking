@@ -1,4 +1,7 @@
 import React from 'react'
+import globe from '../assets/globe.png'
+import key from '../assets/key.png'
+import folder from '../assets/folder.png'
 
 const About = () => {
   return (
@@ -14,32 +17,32 @@ const About = () => {
         </div>
 
         <div  className='row '>
-                <div className="col-12 col-sm-4">
-                    <div class="card border-0">
+                <div className="col-12 col-sm-4 hover-effect">
+                    <div class="card border-0 px-2">
                         <div class="card-body">
+                            <img src= {folder} className="my-4" alt="" width="60px"/>
                         <h4 class="card-title unbounded">One place to save all your documents</h4>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
 
-                <div className="col-12 col-sm-4">
-                <div class="card border-0">
+                <div className="col-12 col-sm-4 hover-effect">
+                <div class="card border-0 px-2">
                         <div class="card-body">
+                        <img src= {globe} className="my-4" alt=""  width="60px"/>
                             <h4 class="card-title unbounded">Your intercontinental shipping solutions</h4>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
 
-                <div className="col-12 col-sm-4">
-                    <div class="card border-0">
+                <div className="col-12 col-sm-4 hover-effect">
+                    <div class="card border-0 px-2">
                         <div class="card-body">
+                        <img src= {key} className="my-4" alt="" width="60px" />
                         <h4 class="card-title unbounded">Safe, Fast , Transparent and Reliable</h4>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>
