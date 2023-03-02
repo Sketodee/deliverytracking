@@ -1,13 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --maroon: #a52a2a;
+
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins' !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.unbounded {
+  font-family: 'Unbounded';
 }
+
+.maroon-bg {
+  background-color: var(--maroon) !important;
+  border: none !important;
+}
+
+.maroon-bg:hover {
+  opacity: 0.9;
+}
+
+
+.maroon-txt {
+  color: var(--maroon) !important;
+}
+
+.hover-effect {
+  transition: transform .5s;
+}
+
+.hover-effect:hover {
+  /* opacity: 0.5; */
+  transform: scale(1.2);
+  transition: transform .5s;
+}
+
