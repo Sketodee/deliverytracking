@@ -3,12 +3,12 @@ import arrow from '../assets/arrow.png'
 
 const Services = () => {
 
-    const from = ["Madrid", "San Jose", "Sao Paulo", "Arrkansas"]
-    const to = ["Lagos", "New York", "Texas"]
+    const from = ["Madrid", "San Jose", "Sao Paulo", "Arrkansas", "Peru", "Stockholm", "Durban", "Istanbul"]
+    const from2 = ["Melbourne", "Montreal", "Tunis"]
+    const to = ["Lagos", "New York", "Texas", "Marseille", "Liverpool"]
+    const to2 = ["San Jose",  "Stockholm", "Durban", "Sao Paulo", "Arrkansas", "Peru"]
 
     const [index, setIndex] = useState(0);
-
-    const [shipId, setShipId] = useState(4902)
 
     useEffect(() => {
         const tick = () => setIndex(i => i + 1);
@@ -36,7 +36,7 @@ const Services = () => {
 
 
             <div className='row'> {/*d-sm-flex justify-content-between align-items-start */}
-                <div className=' col-sm-6 py-3'>
+                <div className=' col-sm-6 py-4'>
                     <div className='row text-center'>
                         <div className='col-4 lh-1 '>
                             <p className='text-secondary'> <small>From</small></p>
@@ -57,7 +57,7 @@ const Services = () => {
                     <div className='row text-center'>
                         <div className='col-4 lh-1 '>
                             <p className='text-secondary'> <small>From</small></p>
-                            <p><strong>{from[index % from.length]} </strong> </p>
+                            <p><strong>{from2[index % from2.length]} </strong> </p>
                         </div>
 
                         <div className='col-4'>
@@ -67,18 +67,18 @@ const Services = () => {
 
                         <div className='col-4 lh-1'>
                             <p className='text-secondary'> <small> To</small></p>
-                            <p> <strong>{to[index % to.length]} </strong> </p>
+                            <p> <strong>{to2[index % to2.length]} </strong> </p>
                         </div>
                     </div>
 
-                    <form class=" row">
+                    {/* <form class=" row">
                         <div class="form-group ms-lg-5 col-8">
                             <input type="text" class="form-control" id="inputPassword2" placeholder="enter tracking ID"/>
                         </div>
                         <div className="col-3">
                              <button type="submit" class="btn btn-primary maroon-bg"> Search </button>
                         </div>
-                    </form>
+                    </form> */}
 
                 </div>
                 <div className=' col-sm-6 py-3'>
