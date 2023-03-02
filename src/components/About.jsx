@@ -5,10 +5,10 @@ import folder from '../assets/folder.png'
 
 const About = () => {
   return (
-    <div>
+    <div id='About'>
         <div className='d-sm-flex justify-content-between align-items-center py-5'>
             <div >
-                <p className='maroon-txt'> About </p>
+                <p className='maroon-txt h5'> About </p>
                 <h3 className='unbounded fs-2'> Solutions for your business need</h3>
             </div>
             <div>

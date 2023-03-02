@@ -23,6 +23,10 @@ body {
   border: none !important;
 }
 
+.maroon-bg:hover {
+  opacity: 0.9;
+}
+
 
 .maroon-txt {
   color: var(--maroon) !important;

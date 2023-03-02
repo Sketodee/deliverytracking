@@ -25,10 +25,10 @@ const Services = () => {
     }, []);
 
     return (
-        <div>
+        <div className='my-5' id='Services'>
             <div className='text-center mt-3 py-5'>
-                <p className='maroon-txt'> Our Services </p>
-                <h3 className='unbounded'>Everything is ready to transport </h3>
+                <p className='maroon-txt h5'> Our Services </p>
+                <h3 className='unbounded pb-3'>Everything is ready to transport </h3>
                 <div className='px-sm-5 d-flex align-items-center justify-content-center '>
                     <p className='px-sm-5'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, deleniti unde nobis voluptatibus quisquam nemo. Maxime doloribus officia impedit quia ipsam esse commodi eveniet aspernatur voluptates dolorum. Sit, aut reprehenderit? </p>
                 </div>
@@ -36,9 +36,9 @@ const Services = () => {
 
 
             <div className='row'> {/*d-sm-flex justify-content-between align-items-start */}
-                <div className=' col-sm-6'>
+                <div className=' col-sm-6 py-3'>
                     <div className='row text-center'>
-                        <div className='col-4 '>
+                        <div className='col-4 lh-1 '>
                             <p className='text-secondary'> <small>From</small></p>
                             <p><strong>{from[index % from.length]} </strong> </p>
                         </div>
@@ -48,14 +48,14 @@ const Services = () => {
                         </div>
 
 
-                        <div className='col-4 '>
+                        <div className='col-4 lh-1 '>
                             <p className='text-secondary'> <small> To</small></p>
                             <p> <strong>{to[index % to.length]} </strong> </p>
                         </div>
                     </div>
 
                     <div className='row text-center'>
-                        <div className='col-4 '>
+                        <div className='col-4 lh-1 '>
                             <p className='text-secondary'> <small>From</small></p>
                             <p><strong>{from[index % from.length]} </strong> </p>
                         </div>
@@ -65,24 +65,23 @@ const Services = () => {
                         </div>
 
 
-                        <div className='col-4 '>
+                        <div className='col-4 lh-1'>
                             <p className='text-secondary'> <small> To</small></p>
                             <p> <strong>{to[index % to.length]} </strong> </p>
                         </div>
                     </div>
 
-                    <form class=" row px-5">
-                        <div class="form-group col-6">
+                    <form class=" row">
+                        <div class="form-group ms-lg-5 col-8">
                             <input type="text" class="form-control" id="inputPassword2" placeholder="enter tracking ID"/>
                         </div>
-                        <div className="col-6">
-                             <button type="submit" class="btn btn-primary"> Search </button>
+                        <div className="col-3">
+                             <button type="submit" class="btn btn-primary maroon-bg"> Search </button>
                         </div>
-                       
                     </form>
 
                 </div>
-                <div className=' col-sm-6'>
+                <div className=' col-sm-6 py-3'>
                     <h3 className='unbounded'> Inland and Ocean Shipping Solutions </h3>
                     <p>We provide both inland and ocean express shipping to make your company's logistic's delivery more faster and efficient </p>
                     <ul>
