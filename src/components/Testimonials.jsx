@@ -16,7 +16,7 @@ const Testimonials = () => {
 
                 <div className='lh-1'>
                     <p className='unbounded fs-3'><strong>   100K <span className='maroon-txt'>+</span> </strong></p>
-                    <p> Hppy Customers around the world </p>
+                    <p> Happy Customers around the world </p>
                 </div>
             </div>
 
