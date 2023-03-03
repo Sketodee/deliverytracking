@@ -24,7 +24,7 @@ const Header = () => {
               <HashLink to="#Services" smooth className='nav-link'> Services </HashLink>
               </li>
               <li className="nav-item">
-              <Link to="Tracking" smooth className='nav-link'> Tracking </Link>
+              <Link to="/Tracking" smooth className='nav-link'> Tracking </Link>
               </li>
             </ul>
             <button className="btn btn-primary maroon-bg" type="submit" >Search</button>
