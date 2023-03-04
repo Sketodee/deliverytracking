@@ -5,17 +5,17 @@ const Testimonials = () => {
         <div className='my-5'>
             <div className='d-sm-flex justify-content-between align-items-center py-5 mt-5 mb-3 '>
                 <div >
-                    <p className='maroon-txt h5'> Testimonials </p>
+                    <p className='brand-txt h5'> Testimonials </p>
                     <h3 className='unbounded fs-2'> Sound from our happy customers</h3>
                 </div>
 
                 <div className='lh-1'>
-                    <p className='unbounded fs-3'><strong>   8 <span className='maroon-txt'>+</span> </strong></p>
+                    <p className='unbounded fs-3'><strong>   8 <span className='brand-txt'>+</span> </strong></p>
                     <p> Awards and counting  </p>
                 </div>
 
                 <div className='lh-1'>
-                    <p className='unbounded fs-3'><strong>   100K <span className='maroon-txt'>+</span> </strong></p>
+                    <p className='unbounded fs-3'><strong>   100K <span className='brand-txt'>+</span> </strong></p>
                     <p> Happy Customers around the world </p>
                 </div>
             </div>
