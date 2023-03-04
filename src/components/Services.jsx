@@ -27,7 +27,7 @@ const Services = () => {
     return (
         <div className='my-5' id='Services'>
             <div className='text-center mt-3 py-5'>
-                <p className='maroon-txt h5'> Our Services </p>
+                <p className='brand-txt h5'> Our Services </p>
                 <h3 className='unbounded pb-3'>Everything is ready to transport </h3>
                 <div className='px-sm-5 d-flex align-items-center justify-content-center '>
                     <p className='px-sm-5'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, deleniti unde nobis voluptatibus quisquam nemo. Maxime doloribus officia impedit quia ipsam esse commodi eveniet aspernatur voluptates dolorum. Sit, aut reprehenderit? </p>
@@ -76,7 +76,7 @@ const Services = () => {
                             <input type="text" class="form-control" id="inputPassword2" placeholder="enter tracking ID"/>
                         </div>
                         <div className="col-3">
-                             <button type="submit" class="btn btn-primary maroon-bg"> Search </button>
+                             <button type="submit" class="btn btn-primary brand-bg"> Search </button>
                         </div>
                     </form> */}
 

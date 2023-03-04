@@ -30,7 +30,7 @@ const About = () => {
                 <div className="col-12 col-sm-4 hover-effect">
                 <div class="card border-0 px-2">
                         <div class="card-body">
-                        <img src= {globe} className="my-4" alt=""  width="60px"/>
+                        <img src= {globe} className="my-4 brand-txt" alt=""  width="60px" />
                             <h4 class="card-title unbounded">Your intercontinental shipping solutions</h4>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         </div>

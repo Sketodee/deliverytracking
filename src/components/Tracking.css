@@ -2,6 +2,7 @@
 
 :root {
     --maroon: #a52a2a;
+    --brand-primary: #f4bc35;
   }
   
 
@@ -55,7 +56,7 @@
 }
 
 .track .step.active:before {
-    background: var(--maroon)
+    background: var(--brand-primary)
 }
 
 .track .step::before {
@@ -68,7 +69,7 @@
 }
 
 .track .step.active .icon {
-    background: var(--maroon);
+    background: var(--brand-primary);
     color: #fff
 }
 

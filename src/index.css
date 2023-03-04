@@ -4,6 +4,7 @@
 
 :root {
   --maroon: #a52a2a;
+  --brand-primary: #f4bc35;
 }
 
 body {
@@ -17,18 +18,18 @@ body {
   font-family: 'Unbounded';
 }
 
-.maroon-bg {
-  background-color: var(--maroon) !important;
+.brand-bg {
+  background-color: var(--brand-primary) !important;
   border: none !important;
 }
 
-.maroon-bg:hover {
+.brand-bg:hover {
   opacity: 0.9;
 }
 
 
-.maroon-txt {
-  color: var(--maroon) !important;
+.brand-txt {
+  color: var(--brand-primary) !important;
 }
 
 .hover-effect {
