@@ -6,8 +6,8 @@ const Footer = () => {
         <div className='container pt-4'>
             <div className="row">
                 <div className="col-sm-6 py-2">
-                        <h5 className='unbounded'>Cicero </h5>
-                        <p className='w-75'>Cicero is a shipping company that helps you transport your logitics without worry anymore </p>
+                        <h5 className='unbounded'>Cristex </h5>
+                        <p className='w-75'>Cristex is a shipping company that helps you transport your logistics without worry anymore </p>
                         <p>All rights reserved, 2023 </p>
                 </div>
                 <div className="col-sm-2 lh-1 py-2">
