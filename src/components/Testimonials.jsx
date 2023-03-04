@@ -30,15 +30,15 @@ const Testimonials = () => {
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="10000">
-                            <p> "I've used other delivery companies in the past, but none of them compare to Cicero's level of customer service. They truly go above and beyond for their customers." </p>
+                            <p> "I've used other delivery companies in the past, but none of them compare to Cristex's level of customer service. They truly go above and beyond for their customers." </p>
                             <p className='fw-bold fst-italic'> - Christina Luigi  </p>
                         </div>
                         <div class="carousel-item" data-bs-interval="2000">
-                            <p> "I've used Cicero's for all of my shipping needs and I have to say, I've been consistently impressed with their speed and reliability." </p>
+                            <p> "I've used Cristex's for all of my shipping needs and I have to say, I've been consistently impressed with their speed and reliability." </p>
                             <p className='fw-bold fst-italic'> - Martha Thiahahu  </p>
                         </div>
                         <div class="carousel-item">
-                            <p> "As a small business owner, I rely on Cicero to ship my products to customers all over the world. They've never let me down and I'm grateful for their excellent service." </p>
+                            <p> "As a small business owner, I rely on Cristex to ship my products to customers all over the world. They've never let me down and I'm grateful for their excellent service." </p>
                             <p className='fw-bold fst-italic'> - Petra Davies </p>
                         </div>
                     </div>

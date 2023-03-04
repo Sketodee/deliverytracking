@@ -30,7 +30,8 @@ const Services = () => {
                 <p className='brand-txt h5'> Our Services </p>
                 <h3 className='unbounded pb-3'>Everything is ready to transport </h3>
                 <div className='px-sm-5 d-flex align-items-center justify-content-center '>
-                    <p className='px-sm-5'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, deleniti unde nobis voluptatibus quisquam nemo. Maxime doloribus officia impedit quia ipsam esse commodi eveniet aspernatur voluptates dolorum. Sit, aut reprehenderit? </p>
+                    <p className='px-sm-5'> At Cristex, we're committed to providing you with exceptional service and a stress-free package tracking experience. With our real-time tracking, multiple carrier support, notifications and alerts, 
+                    shipment monitoring, and shipping options, you can have peace of mind knowing your packages are in good hands. </p>
                 </div>
             </div>
 
