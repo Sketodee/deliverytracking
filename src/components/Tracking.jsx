@@ -1,72 +1,101 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Tracking.css';
-import { Link } from 'react-router-dom';
-import item from "../assets/item.png"
+import TrackingDetails from './TrackingDetails';
+import * as Yup from 'yup';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Formik , Field, Form, ErrorMessage} from 'formik'
+
 
 const Tracking = () => {
+
+     const [order, setOrder] = useState({})
+
+    const notify = (toastType, message) => toastType(message, {
+        position: "top-center",
+        theme: "colored",
+        autoClose: 2000,
+    });
+
     return (
-        <div className='container'>
-            <div className='card'>
-                <header className="card-header"> My Orders / Tracking </header>
-                <div className="card-body">
-                    <h6>Order ID: OD45345345435</h6>
-                    <div className="card ">
-                        <div className="card-body row">
-                            <div className="col"> <strong>Estimated Delivery time:</strong> <br />29 nov 2019 </div>
-                            <div className="col"> <strong>Shipping BY:</strong> <br /> BLUEDART, | <i className="fas fa-phone"></i> +1598675986 </div>
-                            <div className="col"> <strong>Status:</strong> <br /> Picked by the courier </div>
-                            <div className="col"> <strong>Tracking #:</strong> <br /> BD045903594059 </div>
+        <div className='container py-3'>
+            <ToastContainer />
+            <Formik
+                initialValues={{
+                name: ""
+                }}
+
+                validationSchema={Yup.object({
+                    name: Yup.string().required('Required'),
+                })}
+
+                onSubmit={(values, { resetForm }) => {
+
+                    const requestOptions = {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    };
+
+                    fetch(`https://localhost:7248/api/Order/getorderbytrackingid?query=${values.name}`, requestOptions)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(response.status);
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            if (!data.success) {
+                                console.log(data.message)
+                            }
+                            if(data.data == null) {
+                                notify(toast.success, "Couldn't find order with that tracking number")
+                            } else {
+                                resetForm({ values: '' })
+                            console.log(data)
+                            setOrder(order => ({
+                                ...order,
+                                ...data.data
+                              }))
+                            }
+                            
+                        })
+                        .catch((error) => {
+                            console.log(error.message);
+                            notify(toast.error, "Error Creating Order")
+                            //if (error.message === 401) {
+                            //    console.log("Not Authorized")
+                            //} else if (error.message == 404) {
+                            //    console.log("Not Found")
+                            //}
+                        });
+                }}
+            >
+
+                {formik => (
+                    <Form >
+                        <div className='d-flex justify-content-center'>
+                            <div className=" col-8">
+                                <Field placeholder="enter tracking ID" className="form-control" name="name" type="text" />
+                                <p> {formik.touched.name && formik.errors.name ? <span className="small text-danger">{formik.errors.name}</span> : null} </p>
+                            </div>
+
+                            <div className='col-2 offset-1'>
+                                <button className="btn btn-warning maroon-bg text-dark" type="submit">Search</button>
+                            </div>
                         </div>
-                    </div>
+                    </Form>
 
-                    <div className="track">
-                        <div className="step active"> <span className="icon"> <i className="fa fa-check"></i> </span> <span className="text">Order confirmed</span> </div>
-                        <div className="step active"> <span className="icon"> <i className="fa fa-user"></i> </span> <span className="text"> Picked by courier</span> </div>
-                        <div className="step "> <span className="icon"> <i className="fa fa-truck"></i> </span> <span className="text"> On the way </span> </div>
-                        <div className="step"> <span className="icon"> <i className="fa fa-box"></i> </span> <span className="text">Ready for pickup</span> </div>
-                    </div>
+                )}
 
-                    <ul className="row  py-5">
-                        <li className="col-md-4">
-                            <figure className="itemside mb-3">
-                                <div className="aside"><img src={item} className="img-sm border" /></div>
-                                <figcaption className="info align-self-center">
-                                    <p className="title">Dell Laptop with 500GB HDD <br /> 8GB RAM</p> <span className="text-muted">$950 </span>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li className="col-md-4">
-                            <figure className="itemside mb-3">
-                                <div className="aside"><img src={item} className="img-sm border" /></div>
-                                <figcaption className="info align-self-center">
-                                    <p className="title">Dell Laptop with 500GB HDD <br /> 8GB RAM</p> <span className="text-muted">$950 </span>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li className="col-md-4">
-                            <figure className="itemside mb-3">
-                                <div className="aside"><img src={item} className="img-sm border" /></div>
-                                <figcaption className="info align-self-center">
-                                    <p className="title">HP Laptop with 500GB HDD <br /> 8GB RAM</p> <span className="text-muted">$850 </span>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li className="col-md-4">
-                            <figure className="itemside mb-3">
-                                <div className="aside"><img src={item} className="img-sm border" /></div>
-                                <figcaption className="info align-self-center">
-                                    <p className="title">ACER Laptop with 500GB HDD <br /> 8GB RAM</p> <span className="text-muted">$650 </span>
-                                </figcaption>
-                            </figure>
-                        </li>
-                    </ul>
+            </Formik>
 
-                    <hr />
-                    <Link to="/" className="btn btn-warning maroon-bg text-dark" data-abc="true"> <i className="fa fa-chevron-left"></i> Back to Home</Link>
-
-                </div>
-
+            <div>
+                {Object.keys(order).length > 0 ? <TrackingDetails order={order} /> : null}
             </div>
+
+
         </div>
     )
 }

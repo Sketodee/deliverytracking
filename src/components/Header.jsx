@@ -31,7 +31,7 @@ const Header = () => {
                 <Link to="/Tracking" smooth className='nav-link'> Tracking </Link>
               </li>
             </ul>
-            <button className="btn btn-primary brand-bg text-dark" type="submit" >Search</button>
+            {/* <button className="btn btn-primary brand-bg text-dark" type="submit" >Search</button> */}
           </div>
         </div>
       </nav>
