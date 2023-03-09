@@ -1,6 +1,7 @@
 import React from 'react'
 import './Tracking.css';
 import { Link } from 'react-router-dom';
+import item from "../assets/item.png"
 
 const Tracking = () => {
     return (
@@ -28,7 +29,7 @@ const Tracking = () => {
                     <ul className="row  py-5">
                         <li className="col-md-4">
                             <figure className="itemside mb-3">
-                                <div className="aside"><img src="https://i.imgur.com/iDwDQ4o.png" className="img-sm border" /></div>
+                                <div className="aside"><img src={item} className="img-sm border" /></div>
                                 <figcaption className="info align-self-center">
                                     <p className="title">Dell Laptop with 500GB HDD <br /> 8GB RAM</p> <span className="text-muted">$950 </span>
                                 </figcaption>
@@ -36,7 +37,7 @@ const Tracking = () => {
                         </li>
                         <li className="col-md-4">
                             <figure className="itemside mb-3">
-                                <div className="aside"><img src="https://i.imgur.com/iDwDQ4o.png" className="img-sm border" /></div>
+                                <div className="aside"><img src={item} className="img-sm border" /></div>
                                 <figcaption className="info align-self-center">
                                     <p className="title">Dell Laptop with 500GB HDD <br /> 8GB RAM</p> <span className="text-muted">$950 </span>
                                 </figcaption>
@@ -44,7 +45,7 @@ const Tracking = () => {
                         </li>
                         <li className="col-md-4">
                             <figure className="itemside mb-3">
-                                <div className="aside"><img src="https://i.imgur.com/tVBy5Q0.png" className="img-sm border" /></div>
+                                <div className="aside"><img src={item} className="img-sm border" /></div>
                                 <figcaption className="info align-self-center">
                                     <p className="title">HP Laptop with 500GB HDD <br /> 8GB RAM</p> <span className="text-muted">$850 </span>
                                 </figcaption>
@@ -52,7 +53,7 @@ const Tracking = () => {
                         </li>
                         <li className="col-md-4">
                             <figure className="itemside mb-3">
-                                <div className="aside"><img src="https://i.imgur.com/Bd56jKH.png" className="img-sm border" /></div>
+                                <div className="aside"><img src={item} className="img-sm border" /></div>
                                 <figcaption className="info align-self-center">
                                     <p className="title">ACER Laptop with 500GB HDD <br /> 8GB RAM</p> <span className="text-muted">$650 </span>
                                 </figcaption>
@@ -61,7 +62,7 @@ const Tracking = () => {
                     </ul>
 
                     <hr />
-                    <Link to="/" className="btn btn-warning maroon-bg text-white" data-abc="true"> <i className="fa fa-chevron-left"></i> Back to Home</Link>
+                    <Link to="/" className="btn btn-warning maroon-bg text-dark" data-abc="true"> <i className="fa fa-chevron-left"></i> Back to Home</Link>
 
                 </div>
 

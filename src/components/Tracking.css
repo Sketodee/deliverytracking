@@ -70,7 +70,7 @@
 
 .track .step.active .icon {
     background: var(--brand-primary);
-    color: #fff
+    color: black
 }
 
 .track .icon {
