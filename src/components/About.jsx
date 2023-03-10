@@ -19,28 +19,28 @@ const About = () => {
 
             <div className='row '>
                 <div className="col-12 col-sm-4 hover-effect">
-                    <div class="card border-0 px-2">
-                        <div class="card-body">
+                    <div className="card border-0 px-2">
+                        <div className="card-body">
                             <img src={globe} className="my-4 brand-txt" alt="" width="60px" />
-                            <h4 class="card-title unbounded">Your intercontinental shipping solutions</h4>
+                            <h4 className="card-title unbounded">Your intercontinental shipping solutions</h4>
                         </div>
                     </div>
                 </div>
 
                 <div className="col-12 col-sm-4 hover-effect">
-                    <div class="card border-0 px-2">
-                        <div class="card-body">
+                    <div className="card border-0 px-2">
+                        <div className="card-body">
                             <img src={folder} className="my-4" alt="" width="60px" />
-                            <h4 class="card-title unbounded">Real-time tracking support</h4>
+                            <h4 className="card-title unbounded">Real-time tracking support</h4>
                         </div>
                     </div>
                 </div>
 
                 <div className="col-12 col-sm-4 hover-effect">
-                    <div class="card border-0 px-2">
-                        <div class="card-body">
+                    <div className="card border-0 px-2">
+                        <div className="card-body">
                             <img src={key} className="my-4" alt="" width="60px" />
-                            <h4 class="card-title unbounded">Safe, Fast , Transparent and Reliable</h4>
+                            <h4 className="card-title unbounded">Safe, Fast , Transparent and Reliable</h4>
                         </div>
                     </div>
                 </div>
