@@ -21,8 +21,6 @@ const Trabaye = () => {
                     name: [{
                         myguy: '',
                     }],
-                    // phoneNumber: '',
-                    // address: ''
                 }}
 
                 validationSchema={Yup.object({
