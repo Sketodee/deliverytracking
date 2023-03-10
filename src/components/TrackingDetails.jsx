@@ -18,19 +18,17 @@ const TrackingDetails = ({order}) => {
                         </div>
                     </div>
                     <div className="track">
-                        <div className={`step ${order.status.includes("Order") ? "active" : null }`}> <span className="icon"> <i className="fa fa-check"></i> </span> <span className="text">Order confirmed</span> </div>
-                        <div className={`step ${order.status.includes("Order") || order.status.includes("Picked") ? "Active" : null }`}> <span className="icon"> <i className="fa fa-user"></i> </span> <span className="text"> Picked by courier</span> </div>
-                        <div className={`step ${order.status.includes("Order") || order.status.includes("Picked") || order.status.includes("Way") ? "Active" : null }`}> <span className="icon"> <i className="fa fa-truck"></i> </span> <span className="text"> On the way </span> </div>
-                        <div className={`step ${order.status.includes("Order") ||order.status.includes("Picked") || order.status.includes("Way") || order.status.includes("Ready") ? "Active" : null }`}> <span className="icon"> <i className="fa fa-box"></i> </span> <span className="text">Ready for pickup</span> </div>
+                        <div className={`step ${order.status.includes("Order") ||order.status.includes("Picked") || order.status.includes("On") || order.status.includes("Ready") ? "active" : null }`}> <span className="icon"> <i className="fa fa-check"></i> </span> <span className="text">Order confirmed</span> </div>
+                        <div className={`step ${order.status.includes("Picked") || order.status.includes("On") || order.status.includes("Ready") ? "active" : null }`} > <span className="icon"> <i className="fa fa-user"></i> </span> <span className="text"> Picked by courier</span> </div>
+                        <div className={`step ${order.status.includes("On") || order.status.includes("Ready") ? "active" : null }`}> <span className="icon"> <i className="fa fa-truck"></i> </span> <span className="text"> On the way </span> </div>
+                        <div className={`step ${order.status.includes("Ready") ? "active" : null }`} > <span className="icon"> <i className="fa fa-box"></i> </span> <span className="text">Ready for pickup</span> </div>
                     </div>
-
-                    
 
                     <ul className="row  py-5">
                     {order.items.map((orderItem, index) =>
                          <li className="col-md-4">
                          <figure className="itemside mb-3">
-                             <div className="aside"><img src={item} className="img-sm border" /></div>
+                             <div className="aside"><img src={item} className="img-sm border" alt='' /></div>
                              <figcaption className="info align-self-center">
                                  <p className="title">{orderItem.name} <br /> </p> <span className="text-muted">${orderItem.price} </span>
                              </figcaption>

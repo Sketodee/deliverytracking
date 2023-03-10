@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 import { ErrorMessage, Field, FieldArray, Form, Formik } from "formik";
-import React, {useState} from "react";
+import React from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -50,7 +50,7 @@ const Test = () => {
 
                 onSubmit={(values, { resetForm }) => {
              
-                    console.log(values)
+                    // console.log(values)
 
                     const requestOptions = {
                         method: 'POST',
@@ -69,14 +69,14 @@ const Test = () => {
                         })
                         .then(data => {
                             if (!data.success) {
-                                console.log(data.message)
+                                // console.log(data.message)
                             }
                             notify(toast.success, "Order Created Successfully")
                             resetForm({ values: '' })
-                            console.log(data)
+                            // console.log(data)
                         })
                         .catch((error) => {
-                            console.log(error.message);
+                            // console.log(error.message);
                             notify(toast.error, "Error Creating Order")
                             //if (error.message === 401) {
                             //    console.log("Not Authorized")

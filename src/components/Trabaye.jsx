@@ -1,17 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import * as Yup from 'yup';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Formik , Field, Form, ErrorMessage} from 'formik'
+import { Formik , Field, Form} from 'formik'
 
 
 
 const Trabaye = () => {
-
-    const [show, setShow] = useState(false)
-
-    const handleShow = () => setShow(true);
-    const handleClose = () => setShow(false);
 
     const notify = (toastType, message) => toastType(message, {
         position: "top-center",
@@ -47,7 +42,7 @@ const Trabaye = () => {
 
                 onSubmit={(values, { resetForm }) => {
              
-                    console.log(values)
+                    // console.log(values)
 
                     const requestOptions = {
                         method: 'POST',
@@ -66,13 +61,13 @@ const Trabaye = () => {
                         })
                         .then(data => {
                             if (!data.success) {
-                                console.log(data.message)
+                                // console.log(data.message)
                             }
                             notify(toast.success, "Client Created Successfully")
-                            console.log(data)
+                            // console.log(data)
                         })
                         .catch((error) => {
-                            console.log(error.message);
+                            // console.log(error.message);
                             notify(toast.error, "Error Creating Client")
                             //if (error.message === 401) {
                             //    console.log("Not Authorized")
@@ -80,7 +75,6 @@ const Trabaye = () => {
                             //    console.log("Not Found")
                             //}
                         });
-                    handleClose()
                     resetForm({ values: '' })
                 }}
             >

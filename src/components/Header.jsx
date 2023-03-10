@@ -9,9 +9,9 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg bg-light navbar-light">
         <div className="container-fluid">
           {/* <a className="navbar-brand" href="#"> <h3 className='brand-txt unbounded'>Cicero</h3></a> */}
-          <a class="navbar-brand" href="#">
-            <img src={logo} alt="Logo" width="180" class="d-inline-block align-text-top" />
-          </a>
+          <Link className="navbar-brand" to="/">
+            <img src={logo} alt="Logo" width="180" className="d-inline-block align-text-top" />
+          </Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon "></span>
           </button>

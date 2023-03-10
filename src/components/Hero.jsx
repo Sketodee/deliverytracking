@@ -14,7 +14,7 @@ const Hero = () => {
         <button className="btn btn-outline-warning mx-3 text-dark " type="submit" >Start Tracking</button>
       </div>
       {/* <img src={cargoShip} alt="text" className='img-fluid' height="100px"/> */}
-      <div class="bg-image"
+      <div className="bg-image"
         style={{ backgroundImage: `url(${cargoShip})`, height: "50vh", backgroundSize: "cover" }}>
       </div>
     </div>
