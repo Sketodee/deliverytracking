@@ -9,6 +9,8 @@ import { Formik, Field, Form } from "formik";
 const Tracking = () => {
   const [order, setOrder] = useState({});
 
+  const baseURL = process.env.REACT_APP_BASE_URL;
+
   const notify = (toastType, message) =>
     toastType(message, {
       position: "top-center",
@@ -35,7 +37,7 @@ const Tracking = () => {
           };
 
           fetch(
-            `http://localhost:3900/api/order/getorderbytrackingid?trackingId=${values.name}`,
+            `${baseURL}/order/getorderbytrackingid?trackingId=${values.name}`,
             requestOptions
           )
             .then((response) => {

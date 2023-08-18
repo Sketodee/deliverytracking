@@ -33,9 +33,7 @@ const OrderList = () => {
   const handleDelete = async (rowIndex) => {
     setIsLoading(true);
 
-    fetch(
-      `http://localhost:3900/api/order/deleteorderbytrackingid?trackingId=${rowIndex}`
-    )
+    fetch(`${baseURL}/order/deleteorderbytrackingid?trackingId=${rowIndex}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(response.status);
@@ -46,7 +44,7 @@ const OrderList = () => {
         return response.json();
       })
       .catch((error) => {
-        notify(toast.error, "Error Updating Order");
+        notify(toast.error, "Error Deleting Order");
       });
     setModalClose(true);
     setIsLoading(false);
@@ -69,7 +67,7 @@ const OrderList = () => {
     };
 
     fetch(
-      `http://localhost:3900/api/order/updateorderstatus?orderId=${rowIndex}`,
+      `${baseURL}/order/updateorderstatus?orderId=${rowIndex}`,
       requestOptions
     )
       .then((response) => {
