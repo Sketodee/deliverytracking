@@ -124,7 +124,7 @@ const OrderList = () => {
             </tr>
           </thead>
           <tbody>
-            {items.map((item, index) => (
+            {items?.map((item, index) => (
               <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{item.orderId}</td>
