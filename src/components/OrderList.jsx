@@ -112,7 +112,7 @@ const OrderList = () => {
   return (
     <div className="table-responsive">
       <h3> Order List </h3>
-      {items.length > 0 ? (
+      {items.length > 0 && Array.isArray(items) ? (
         <table className="table table-striped" aria-labelledby="tabelLabel">
           <thead>
             <tr>
