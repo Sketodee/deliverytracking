@@ -10,23 +10,39 @@ const TrackingDetails = ({ order }) => {
         <h6>Order ID: {order.orderId} </h6>
         <div className="card ">
           <div className="card-body row">
-            <div className="col">
+            <div className="col-6 col-sm-3 py-1">
               {" "}
               <strong>Estimated Delivery time:</strong> <br />{" "}
               {order.deliveryDate.slice(0, -14)}{" "}
             </div>
-            <div className="col">
+            <div className="col-6 col-sm-3 py-1">
               {" "}
-              <strong>Shipping BY:</strong> <br /> {order.shippedBy}{" "}
+              <strong>Shipping By:</strong> <br /> {order.shippedBy}{" "}
             </div>
-            <div className="col">
+            <div className="col-6 col-sm-3 py-1">
               {" "}
               <strong>Status:</strong> <br /> {order.status}{" "}
             </div>
-            <div className="col">
+            <div className="col-6 col-sm-3 py-1">
               {" "}
               <strong>Tracking #:</strong> <br /> {order.trackingId}{" "}
             </div>
+          </div>
+
+          <div className="card-body row">
+            <div className="col-6 col-sm-3 py-1">
+              {" "}
+              <strong>From:</strong> <br /> {order.from}{" "}
+            </div>
+            <div className="col-6 col-sm-3 py-1">
+              {" "}
+              <strong>Current Location:</strong> <br /> {order.currentLocation}{" "}
+            </div>
+            <div className="col-6 col-sm-3 py-1">
+              {" "}
+              <strong>Final Location:</strong> <br /> {order.to}{" "}
+            </div>
+            <div className="col-6 col-sm-3 py-1"></div>
           </div>
         </div>
         <div className="track">

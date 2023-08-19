@@ -28,6 +28,9 @@ const Test = () => {
           deliveryDate: "",
           shippedBy: "",
           status: "",
+          from: "",
+          currentLocation: "",
+          to: "",
           items: [
             {
               name: "",
@@ -50,6 +53,9 @@ const Test = () => {
           deliveryDate: Yup.string().required("Required"),
           shippedBy: Yup.string().required("Required"),
           status: Yup.string().required("Required"),
+          from: Yup.string().required("Required"),
+          to: Yup.string().required("Required"),
+          currentLocation: Yup.string().required("Required"),
         })}
         onSubmit={(values, { resetForm }) => {
           console.log(values);
@@ -78,7 +84,7 @@ const Test = () => {
         }}
         render={({ values }) => (
           <Form>
-            <div className="row py-4">
+            <div className="row pt-4">
               <div className="col-sm-4 col-12">
                 <label htmlFor="deliveryDate" className="mt-3 ">
                   {" "}
@@ -123,6 +129,44 @@ const Test = () => {
               </div>
             </div>
 
+            <div className="row pb-4">
+              <div className="col-sm-4 col-12">
+                <label htmlFor="from" className="mt-3">
+                  {" "}
+                  From{" "}
+                  <span className="small text-danger">
+                    {" "}
+                    <ErrorMessage name={`from`} />{" "}
+                  </span>{" "}
+                </label>
+                <Field className="form-control" name={`from`} />
+              </div>
+
+              <div className="col-sm-4 col-12">
+                <label htmlFor="currentLocation" className="mt-3">
+                  {" "}
+                  Current Location{" "}
+                  <span className="small text-danger">
+                    {" "}
+                    <ErrorMessage name={`currentLocation`} />{" "}
+                  </span>{" "}
+                </label>
+                <Field className="form-control" name={`currentLocation`} />
+              </div>
+
+              <div className="col-sm-4 col-12">
+                <label htmlFor="to" className="mt-3">
+                  {" "}
+                  To{" "}
+                  <span className="small text-danger">
+                    {" "}
+                    <ErrorMessage name={`to`} />{" "}
+                  </span>{" "}
+                </label>
+                <Field className="form-control" name={`to`} />
+              </div>
+            </div>
+
             <h5>Add items </h5>
             <FieldArray
               name="items"
@@ -132,7 +176,7 @@ const Test = () => {
                   <div className="py-2">
                     {items && items.length > 0
                       ? items.map((item, index) => (
-                          <div key={index} className="row  py-2">
+                          <div key={index} className="row  py-1">
                             <div className="col-5">
                               <label htmlFor="name" className="mt-3">
                                 {" "}
