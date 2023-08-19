@@ -23,11 +23,26 @@ const OrderList = () => {
 
   const [items, setItems] = useState([]);
 
-  const [newStatus, setNewStatus] = useState("");
+  const [inputValues, setInputValues] = useState([]);
 
-  const handleChange = (event, rowIndex) => {
-    const selectedValue = event.target.value;
-    setNewStatus(selectedValue);
+  const [selectedRowIndex, setSelectedRowIndex] = useState(null);
+
+  const handleChange = (index, fieldName, value) => {
+    const updatedValues = [...inputValues];
+    updatedValues[index] = {
+      ...updatedValues[index],
+      [fieldName]: value,
+    };
+    setInputValues(updatedValues);
+  };
+
+  const handleSelectChange = (index, value) => {
+    const updatedValues = [...inputValues];
+    updatedValues[index] = {
+      ...updatedValues[index],
+      status: value,
+    };
+    setInputValues(updatedValues);
   };
 
   const handleDelete = async (rowIndex) => {
@@ -50,12 +65,15 @@ const OrderList = () => {
     setIsLoading(false);
   };
 
-  const handleSubmit = (rowIndex) => {
-    // console.log(`Selected value for row ${rowIndex}: ${newStatus}`);
+  const handleSubmit = (rowIndex, item) => {
     setIsLoading(true);
+    setSelectedRowIndex(rowIndex);
 
     const requestbody = {
-      status: newStatus,
+      ...inputValues[rowIndex],
+      status: inputValues[rowIndex]?.status || item.status, // if the order status is not updated.. it auto updates
+      currentLocation:
+        inputValues[rowIndex]?.currentLocation || item.currentLocation,
     };
 
     const requestOptions = {
@@ -67,7 +85,7 @@ const OrderList = () => {
     };
 
     fetch(
-      `${baseURL}/order/updateorderstatus?orderId=${rowIndex}`,
+      `${baseURL}/order/updateorderstatus?orderId=${item.orderId}`,
       requestOptions
     )
       .then((response) => {
@@ -84,7 +102,7 @@ const OrderList = () => {
       });
 
     setIsLoading(false);
-    setNewStatus("");
+    setInputValues("");
   };
 
   const getOrder = async () => {
@@ -115,24 +133,27 @@ const OrderList = () => {
           <thead>
             <tr>
               <th>S/N</th>
-              <th>Order ID </th>
               <th> Tracking ID </th>
               <th> Status </th>
+              <th> Location</th>
               <th>Update Status</th>
+              <th>Update Location</th>
             </tr>
           </thead>
           <tbody>
             {items?.map((item, index) => (
               <tr key={index}>
                 <td>{index + 1}</td>
-                <td>{item.orderId}</td>
                 <td>{item.trackingId}</td>
                 <td>{item.status}</td>
+                <td>{item.currentLocation}</td>
                 <td>
                   <select
+                    name="status"
                     className="form-select form-select-sm"
                     aria-label=".form-select-sm example"
-                    onChange={(event) => handleChange(event, item.orderId)}
+                    value={inputValues[index]?.status || item.status}
+                    onChange={(e) => handleSelectChange(index, e.target.value)}
                   >
                     {/* <option selected> {item.status} </option> */}
                     <option value="Order Confirmed">Order Confirmed</option>
@@ -142,10 +163,22 @@ const OrderList = () => {
                   </select>
                 </td>
                 <td>
+                  <input
+                    type="text"
+                    name="currentLocation"
+                    className="form-control-sm"
+                    value={inputValues[index]?.currentLocation || ""}
+                    onChange={(e) =>
+                      handleChange(index, "currentLocation", e.target.value)
+                    }
+                  />
+                </td>
+                <td>
                   <button
-                    disabled={newStatus.length === 0}
+                    // disabled={inputValues.length === 0}
+                    disabled={!inputValues[index]?.currentLocation}
                     className="btn btn-success"
-                    onClick={() => handleSubmit(item.orderId)}
+                    onClick={() => handleSubmit(index, item)}
                   >
                     Update{" "}
                   </button>
