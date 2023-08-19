@@ -16,6 +16,8 @@ const Test = () => {
       autoClose: 2000,
     });
 
+  const baseURL = process.env.REACT_APP_BASE_URL;
+
   return (
     <div className="container">
       <ToastContainer />
@@ -60,7 +62,7 @@ const Test = () => {
             body: JSON.stringify(values),
           };
 
-          fetch("http://localhost:3900/api/order/addorder", requestOptions)
+          fetch(`${baseURL}/order/addorder`, requestOptions)
             .then((response) => {
               if (!response.ok) {
                 throw new Error(response.status);
