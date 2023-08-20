@@ -175,8 +175,10 @@ const OrderList = () => {
                 </td>
                 <td>
                   <button
-                    // disabled={inputValues.length === 0}
-                    disabled={!inputValues[index]?.currentLocation}
+                    // disabled={
+                    //   !inputValues[index]?.currentLocation ||
+                    //   !inputValues[index]?.currentLocation
+                    // }
                     className="btn btn-success"
                     onClick={() => handleSubmit(index, item)}
                   >
