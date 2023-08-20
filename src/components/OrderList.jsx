@@ -166,7 +166,7 @@ const OrderList = () => {
                   <input
                     type="text"
                     name="currentLocation"
-                    className="form-control-sm"
+                    className="form-control-sm form-control"
                     value={inputValues[index]?.currentLocation || ""}
                     onChange={(e) =>
                       handleChange(index, "currentLocation", e.target.value)
