@@ -32,6 +32,24 @@ const TrackingDetails = ({ order }) => {
           <div className="card-body row">
             <div className="col-6 col-sm-3 py-1">
               {" "}
+              <strong>Receiver's Name</strong> <br /> {order.receiverName}{" "}
+            </div>
+            <div className="col-6 col-sm-3 py-1">
+              {" "}
+              <strong>Receiver's Address</strong> <br /> {order.receiverAddress}{" "}
+            </div>
+            <div className="col-6 col-sm-3 py-1">
+              {" "}
+              <strong>Receiver's Contact</strong> <br /> {order.receiverPhone}{" "}
+            </div>
+            <div className="col-6 col-sm-3 py-1">
+              <strong>Receiver's Email</strong> <br /> {order.receiverEmail}
+            </div>
+          </div>
+
+          <div className="card-body row">
+            <div className="col-6 col-sm-3 py-1">
+              {" "}
               <strong>From:</strong> <br /> {order.from}{" "}
             </div>
             <div className="col-6 col-sm-3 py-1">

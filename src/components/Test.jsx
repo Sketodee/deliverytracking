@@ -31,6 +31,10 @@ const Test = () => {
           from: "",
           currentLocation: "",
           to: "",
+          receiverName: "",
+          receiverAddress: "",
+          receiverPhone: "",
+          receiverEmail: "",
           items: [
             {
               name: "",
@@ -55,6 +59,14 @@ const Test = () => {
           status: Yup.string().required("Required"),
           from: Yup.string().required("Required"),
           to: Yup.string().required("Required"),
+          receiverName: Yup.string().required("Required"),
+          receiverAddress: Yup.string().required("Required"),
+          receiverPhone: Yup.string()
+            .required("Required")
+            .matches(/^[0-9]+$/, "Please enter a valid number"),
+          receiverEmail: Yup.string()
+            .required("Required")
+            .email("Please enter a valid email"),
           currentLocation: Yup.string().required("Required"),
         })}
         onSubmit={(values, { resetForm }) => {
@@ -164,6 +176,56 @@ const Test = () => {
                   </span>{" "}
                 </label>
                 <Field className="form-control" name={`to`} />
+              </div>
+            </div>
+
+            <div className="row pb-4">
+              <div className="col-sm-4 col-12">
+                <label htmlFor="receiverName" className="mt-3">
+                  {" "}
+                  Receiver's Name{" "}
+                  <span className="small text-danger">
+                    {" "}
+                    <ErrorMessage name={`receiverName`} />{" "}
+                  </span>{" "}
+                </label>
+                <Field className="form-control" name={`receiverName`} />
+              </div>
+
+              <div className="col-sm-4 col-12">
+                <label htmlFor="receiverAddress" className="mt-3">
+                  {" "}
+                  Receiver's Address{" "}
+                  <span className="small text-danger">
+                    {" "}
+                    <ErrorMessage name={`receiverAddress`} />{" "}
+                  </span>{" "}
+                </label>
+                <Field className="form-control" name={`receiverAddress`} />
+              </div>
+
+              <div className="col-sm-4 col-12">
+                <label htmlFor="receiverPhone" className="mt-3">
+                  {" "}
+                  Receiver's Contact{" "}
+                  <span className="small text-danger">
+                    {" "}
+                    <ErrorMessage name={`receiverPhone`} />{" "}
+                  </span>{" "}
+                </label>
+                <Field className="form-control" name={`receiverPhone`} />
+              </div>
+
+              <div className="col-sm-4 col-12">
+                <label htmlFor="receiverEmail" className="mt-3">
+                  {" "}
+                  Receiver's Email{" "}
+                  <span className="small text-danger">
+                    {" "}
+                    <ErrorMessage name={`receiverEmail`} />{" "}
+                  </span>{" "}
+                </label>
+                <Field className="form-control" name={`receiverEmail`} />
               </div>
             </div>
 
