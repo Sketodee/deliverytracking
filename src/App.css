@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+#tidio-chat-iframe { margin-bottom: 0em !important; }
+@media only screen and (max-width: 980px) {
+ /*Edit the 0px number according to your website for mobile*/
+     #tidio-chat-iframe { 
+      margin-bottom: 0px !important;
+      display: hidden !important;
+    }
+}
