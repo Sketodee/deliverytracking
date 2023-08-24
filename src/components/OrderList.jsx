@@ -160,6 +160,7 @@ const OrderList = () => {
                     <option value="Picked By Courier">Picked by Courier</option>
                     <option value="On The Way">On The Way</option>
                     <option value="Ready For Pickup">Ready For Pickup</option>
+                    <option value="On Hold">On Hold</option>
                   </select>
                 </td>
                 <td>
