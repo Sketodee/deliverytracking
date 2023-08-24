@@ -63,66 +63,77 @@ const TrackingDetails = ({ order }) => {
             <div className="col-6 col-sm-3 py-1"></div>
           </div>
         </div>
-        <div className="track">
-          <div
-            className={`step ${
-              order.status.includes("Order") ||
-              order.status.includes("Picked") ||
-              order.status.includes("On") ||
-              order.status.includes("Ready")
-                ? "active"
-                : null
-            }`}
-          >
-            {" "}
-            <span className="icon">
+        
+        
+        <div>
+        {order.status == 'On Hold' 
+        ?  
+        <p className="text-center fw-bold h3 pt-5"> <span className="icon">
+        {" "}
+        <i className="fa fa-lock"></i>{" "}
+        </span>{" "} Order On Hold </p>
+         : 
+          <div className="track">
+            <div
+              className={`step ${
+                order.status.includes("Order") ||
+                order.status.includes("Picked") ||
+                order.status.includes("Way") ||
+                order.status.includes("Ready")
+                  ? "active"
+                  : null
+              }`}
+            >
               {" "}
-              <i className="fa fa-check"></i>{" "}
-            </span>{" "}
-            <span className="text">Order Confirmed</span>{" "}
-          </div>
-          <div
-            className={`step ${
-              order.status.includes("Picked") ||
-              order.status.includes("On") ||
-              order.status.includes("Ready")
-                ? "active"
-                : null
-            }`}
-          >
-            {" "}
-            <span className="icon">
+              <span className="icon">
+                {" "}
+                <i className="fa fa-check"></i>{" "}
+              </span>{" "}
+              <span className="text">Order Confirmed</span>{" "}
+            </div>
+            <div
+              className={`step ${
+                order.status.includes("Picked") ||
+                order.status.includes("Way") ||
+                order.status.includes("Ready")
+                  ? "active"
+                  : null
+              }`}
+            >
               {" "}
-              <i className="fa fa-user"></i>{" "}
-            </span>{" "}
-            <span className="text"> Picked By Courier</span>{" "}
-          </div>
-          <div
-            className={`step ${
-              order.status.includes("On") || order.status.includes("Ready")
-                ? "active"
-                : null
-            }`}
-          >
-            {" "}
-            <span className="icon">
+              <span className="icon">
+                {" "}
+                <i className="fa fa-user"></i>{" "}
+              </span>{" "}
+              <span className="text"> Picked By Courier</span>{" "}
+            </div>
+            <div
+              className={`step ${
+                order.status.includes("Way") || order.status.includes("Ready")
+                  ? "active"
+                  : null
+              }`}
+            >
               {" "}
-              <i className="fa fa-truck"></i>{" "}
-            </span>{" "}
-            <span className="text"> On The Way </span>{" "}
-          </div>
-          <div
-            className={`step ${
-              order.status.includes("Ready") ? "active" : null
-            }`}
-          >
-            {" "}
-            <span className="icon">
+              <span className="icon">
+                {" "}
+                <i className="fa fa-truck"></i>{" "}
+              </span>{" "}
+              <span className="text"> On The Way </span>{" "}
+            </div>
+            <div
+              className={`step ${
+                order.status.includes("Ready") ? "active" : null
+              }`}
+            >
               {" "}
-              <i className="fa fa-box"></i>{" "}
-            </span>{" "}
-            <span className="text">Ready For Pickup</span>{" "}
-          </div>
+              <span className="icon">
+                {" "}
+                <i className="fa fa-box"></i>{" "}
+              </span>{" "}
+              <span className="text">Ready For Pickup</span>{" "}
+            </div>
+          </div> }
         </div>
 
         <ul className="row  py-5">
