@@ -6,6 +6,9 @@ import Footer from './components/Footer';
 import Tracking from './components/Tracking';
 import Test from './components/Test';
 
+import apiPolling from './components/apiPolling';
+
+apiPolling();
 
 function App() {
   return (
